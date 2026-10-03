@@ -1,0 +1,256 @@
+/* Pathway — сайт приложения. Токены из дизайн-системы приложения (палитра
+   «Фирменная»): тёмная тема всегда, никаких box-shadow, глубина — границами
+   и яркостью поверхностей. Градиент логотипа — только на тропе. */
+
+@font-face { font-family: 'Manrope'; src: url('../fonts/Manrope_400Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('../fonts/Manrope_500Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('../fonts/Manrope_700Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Unbounded'; src: url('../fonts/Unbounded_500Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+
+:root {
+  --bg: #0A0F1A;
+  --surface: #111826;
+  --surface-raised: #172134;
+  --border: #233047;
+  --text: #EEF3FA;
+  --text-secondary: #9BA8BD;
+  --text-tertiary: #7A879E;
+  --accent: #2F86FF;
+  --accent-fill: #1A6FF0;
+  --accent-fill-pressed: #155CC8;
+  --accent-muted: #10213D;
+  --trail-dots: #2E3B53;
+  --trail: linear-gradient(90deg, #1471FD, #30D6F4 55%, #4BE39D);
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+  --r-s: 12px; --r-m: 16px; --r-l: 20px; --r-xl: 28px;
+
+  --display: 'Unbounded', system-ui, sans-serif;
+  --body: 'Manrope', system-ui, sans-serif;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --t-fast: 80ms; --t-base: 200ms; --t-slow: 400ms;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 500 16px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+.num { font-variant-numeric: tabular-nums; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 var(--s-5); }
+
+/* ---------- Кнопки ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  height: 56px; padding: 0 var(--s-5);
+  border-radius: var(--r-l);
+  font: 700 17px/1 var(--body);
+  transition: background var(--t-base) var(--ease), transform var(--t-fast) var(--ease), color var(--t-base) var(--ease);
+}
+.btn svg { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.btn:active { transform: scale(0.96); }
+.btn--primary { background: var(--accent-fill); color: #FFFFFF; }
+.btn--primary:hover { background: var(--accent-fill-pressed); }
+.btn--ghost { border: 1px solid var(--border); color: var(--text-secondary); font-weight: 500; }
+.btn--ghost:hover { background: var(--surface); color: var(--text); }
+.btn--small { height: 40px; padding: 0 var(--s-4); border-radius: var(--r-s); font-size: 14px; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- Шапка ---------- */
+.header {
+  position: fixed; inset: 0 0 auto 0; z-index: 20;
+  border-bottom: 1px solid transparent;
+  transition: background var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+}
+.header.is-scrolled, .header.is-open {
+  background: rgba(10, 15, 26, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--border);
+}
+.header__inner {
+  max-width: 1160px; margin: 0 auto;
+  padding: var(--s-3) var(--s-5);
+  display: flex; align-items: center; gap: var(--s-5);
+}
+.header__brand { display: flex; align-items: center; gap: var(--s-2); margin-right: auto; }
+.header__name { font: 500 19px/1 var(--display); letter-spacing: -0.2px; }
+.header__nav { display: flex; gap: var(--s-5); }
+.header__nav a { color: var(--text-secondary); font-size: 14px; transition: color var(--t-base) var(--ease); }
+.header__nav a:hover { color: var(--text); }
+.header__burger {
+  display: none; flex-direction: column; gap: 5px;
+  width: 44px; height: 44px; align-items: center; justify-content: center;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 50%;
+  cursor: pointer;
+}
+.header__burger span { width: 18px; height: 2px; background: var(--text); border-radius: 1px; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 132px 0 var(--s-8); overflow: hidden; }
+.hero__inner {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--s-7); align-items: center;
+  min-height: calc(100svh - 196px);
+}
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: var(--s-4);
+}
+.hero__title {
+  font: 500 clamp(38px, 6vw, 72px)/1.08 var(--display);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s-5);
+}
+.hero__lead { max-width: 560px; color: var(--text-secondary); font-size: 18px; margin-bottom: var(--s-6); }
+.hero__actions { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-4); }
+.hero__meta { color: var(--text-tertiary); font-size: 14px; }
+
+.hero__visual { position: relative; display: flex; justify-content: center; }
+.logo-anim { width: min(420px, 100%); height: auto; overflow: visible; position: relative; z-index: 1; }
+.hero__trail {
+  position: absolute; left: -10%; right: -10%; bottom: 4%; width: 120%; height: 40%;
+  opacity: 0.6; z-index: 0;
+}
+.trail-dots { fill: none; stroke: var(--trail-dots); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 0.1 9; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cascade { opacity: 0; transform: translateY(16px); animation: cascade-in 600ms var(--ease) forwards; }
+  .cascade:nth-child(2) { animation-delay: 100ms; }
+  .cascade:nth-child(3) { animation-delay: 200ms; }
+  .cascade:nth-child(4) { animation-delay: 300ms; }
+  .cascade:nth-child(5) { animation-delay: 400ms; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+}
+@keyframes cascade-in { to { opacity: 1; transform: none; } }
+
+/* ---------- Секции ---------- */
+.section { padding: var(--s-9) 0; }
+.section--surface { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section__title {
+  font: 500 clamp(28px, 4vw, 44px)/1.15 var(--display);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-4);
+}
+.section__lead { color: var(--text-secondary); font-size: 18px; max-width: 620px; margin-bottom: var(--s-7); }
+
+/* ---------- Шаги ---------- */
+.steps { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); padding-top: var(--s-6); }
+.steps__trail { position: absolute; top: 0; left: 0; width: 100%; height: 40px; overflow: visible; }
+/* Без vector-effect: с ним браузер считает штрих в пикселях экрана, а не в
+   pathLength, и анимация прорисовки съезжает. */
+.steps__dots { fill: none; stroke: var(--trail-dots); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 0.1 14; }
+.steps__line {
+  fill: none; stroke: url(#st-grad); stroke-width: 4; stroke-linecap: round;
+  stroke-dasharray: 100 100; stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1400ms var(--ease);
+}
+.steps.is-drawn .steps__line { stroke-dashoffset: 0; }
+.step {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-l);
+  padding: var(--s-5);
+}
+.step__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent-muted); color: var(--accent);
+  font: 500 18px/1 var(--display);
+  margin-bottom: var(--s-4);
+}
+.step h3 { font-size: 20px; font-weight: 700; margin-bottom: var(--s-2); }
+.step p { color: var(--text-secondary); }
+
+/* ---------- Возможности ---------- */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); margin-top: var(--s-6); }
+.feature {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-l);
+  padding: var(--s-5);
+}
+.feature svg {
+  width: 28px; height: 28px; margin-bottom: var(--s-4);
+  fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.feature h3 { font-size: 18px; font-weight: 700; margin-bottom: var(--s-2); }
+.feature p { color: var(--text-secondary); font-size: 15px; }
+
+/* ---------- Экраны ---------- */
+.screens {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s-4);
+  margin-top: var(--s-6);
+}
+.screen img {
+  width: 100%; border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.screen figcaption { margin-top: var(--s-3); text-align: center; color: var(--text-secondary); font-size: 14px; }
+
+/* ---------- Скачать ---------- */
+.download { display: grid; grid-template-columns: auto 1fr; gap: var(--s-6); align-items: start; max-width: 860px; }
+.download__logo { width: 112px; height: 112px; }
+.download__meta { color: var(--text-tertiary); margin-bottom: var(--s-5); }
+.install {
+  margin: var(--s-6) 0 var(--s-5); padding-left: var(--s-5);
+  color: var(--text-secondary);
+  display: grid; gap: var(--s-2);
+}
+.install li::marker { color: var(--accent); font-weight: 700; }
+.download__note { color: var(--text-tertiary); font-size: 14px; }
+.download__note code {
+  display: block; margin-top: var(--s-2);
+  font: 500 12px/1.5 ui-monospace, Consolas, monospace;
+  color: var(--text-secondary); word-break: break-all;
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-s);
+  padding: var(--s-2) var(--s-3);
+}
+
+/* ---------- Подвал ---------- */
+.footer { padding: var(--s-6) 0; border-top: 1px solid var(--border); }
+.footer__inner { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; color: var(--text-tertiary); font-size: 14px; }
+.footer__inner a { color: var(--text-secondary); transition: color var(--t-base) var(--ease); }
+.footer__inner a:hover { color: var(--text); }
+.footer__inner span { margin-right: auto; }
+
+/* ---------- Политика ---------- */
+.doc { max-width: 720px; padding: 120px var(--s-5) var(--s-8); margin: 0 auto; }
+.doc h1 { font: 500 clamp(28px, 4vw, 40px)/1.15 var(--display); letter-spacing: -0.02em; margin-bottom: var(--s-3); }
+.doc h2 { font-size: 20px; font-weight: 700; margin: var(--s-6) 0 var(--s-2); }
+.doc p, .doc li { color: var(--text-secondary); margin-bottom: var(--s-3); }
+.doc ul { padding-left: var(--s-5); }
+.doc .updated { color: var(--text-tertiary); font-size: 14px; }
+.doc a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 960px) {
+  .hero__inner { grid-template-columns: 1fr; min-height: 0; gap: var(--s-6); }
+  .hero__visual { order: -1; }
+  .logo-anim { width: min(300px, 80%); }
+  .steps, .features { grid-template-columns: 1fr 1fr; }
+  .steps__trail { display: none; }
+  .screens { grid-template-columns: repeat(5, 62%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-3); }
+  .screen { scroll-snap-align: start; }
+}
+@media (max-width: 720px) {
+  .header__nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: var(--s-2) var(--s-5) var(--s-4);
+    display: none;
+  }
+  .header__nav.is-open { display: flex; }
+  .header__nav a { padding: var(--s-3) 0; font-size: 16px; }
+  .header__cta { display: none; }
+  .header__burger { display: flex; }
+  .hero { padding-top: 104px; }
+  .steps, .features { grid-template-columns: 1fr; }
+  .section { padding: var(--s-8) 0; }
+  .download { grid-template-columns: 1fr; }
+  .download__logo { width: 88px; height: 88px; }
+  .footer__inner span { margin-right: 0; width: 100%; }
+}

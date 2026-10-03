@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pathway — трекер целей, к которым идут по чуть-чуть</title>
+  <meta name="description" content="Pathway — бесплатное приложение для Android: ставишь цель-число, после каждого подхода тапаешь +10, приложение считает путь и празднует финиш. Без рекламы, аккаунтов и интернета.">
+  <meta name="theme-color" content="#0A0F1A">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=1">
+  <meta property="og:title" content="Pathway — большое складывается из малого">
+  <meta property="og:description" content="Трекер целей для Android: тысяча отжиманий, три тысячи страниц, сто часов гитары. Тапаешь после каждого подхода — приложение ведёт к финишу.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://pretwora.github.io/pathway-web/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<header class="header" id="top">
+  <div class="header__inner">
+    <a class="header__brand" href="#top" aria-label="Pathway — в начало">
+      <img src="assets/img/logo-96.png" alt="" width="36" height="36">
+      <span class="header__name">pathway</span>
+    </a>
+    <nav class="header__nav" id="nav">
+      <a href="#how">Как это работает</a>
+      <a href="#features">Возможности</a>
+      <a href="#screens">Экраны</a>
+      <a href="#download">Скачать</a>
+    </nav>
+    <a class="btn btn--primary btn--small header__cta" href="#download">Скачать</a>
+    <button class="header__burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow cascade">Трекер целей для Android</p>
+        <h1 class="hero__title cascade">Большое складывается из малого</h1>
+        <p class="hero__lead cascade">Поставь цель-число — тысячу отжиманий, три тысячи страниц, сто часов гитары.
+          После каждого подхода тапни <span class="num">+10</span>. Pathway считает путь, показывает,
+          сколько осталось, и празднует финиш.</p>
+        <div class="hero__actions cascade">
+          <a class="btn btn--primary" href="downloads/pathway-1.0.0.apk" download>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"/></svg>
+            Скачать APK
+          </a>
+          <a class="btn btn--ghost" href="#how">Как это работает</a>
+        </div>
+        <p class="hero__meta cascade num">1.0.0 · Android 7 и новее · 67 МБ · бесплатно, без рекламы</p>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <svg class="logo-anim" id="logoAnim" viewBox="-220 -220 1440 1440">
+          <defs>
+            <clipPath id="la-tile"><rect width="1000" height="1000" rx="280"/></clipPath>
+            <clipPath id="la-flood"><circle id="la-floodc" cx="800" cy="212" r="0"/></clipPath>
+            <linearGradient id="la-shade" x1="0" y1="600" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9EAF9"/>
+            </linearGradient>
+            <linearGradient id="la-ring" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#1471FD"/><stop offset=".55" stop-color="#30D6F4"/><stop offset="1" stop-color="#4BE39D"/>
+            </linearGradient>
+            <mask id="la-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="1000"><g id="la-bands"></g></mask>
+          </defs>
+          <circle id="la-ringc" cx="800" cy="212" r="0" fill="none" stroke="url(#la-ring)" stroke-width="10" opacity="0"/>
+          <g id="la-tileg">
+            <g clip-path="url(#la-tile)">
+              <rect width="1000" height="1000" fill="#111826"/>
+              <image href="assets/img/tile-bg.webp" width="1000" height="1000" clip-path="url(#la-flood)" preserveAspectRatio="none"/>
+              <path id="la-road" fill="url(#la-shade)" mask="url(#la-reveal)"/>
+              <g id="la-arrow" opacity="0"><path id="la-arrowp" fill="#FFFFFF"/></g>
+            </g>
+            <rect id="la-border" width="1000" height="1000" rx="280" fill="none" stroke="#233047" stroke-width="6"/>
+          </g>
+        </svg>
+        <svg class="hero__trail" viewBox="0 0 342 128" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="ht-grad" gradientUnits="userSpaceOnUse" x1="18" y1="108" x2="322" y2="20">
+              <stop offset="0" stop-color="#1471FD"/><stop offset=".55" stop-color="#30D6F4"/><stop offset="1" stop-color="#4BE39D"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 108C98 108 104 36 176 56C244 75 256 22 322 20" class="trail-dots"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="container">
+      <h2 class="section__title reveal">Как это работает</h2>
+      <p class="section__lead reveal">Три шага. Между запуском и кнопкой — ничего лишнего: достал телефон одной рукой, тапнул, убрал в карман.</p>
+      <div class="steps">
+        <svg class="steps__trail" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="st-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#1471FD"/><stop offset=".55" stop-color="#30D6F4"/><stop offset="1" stop-color="#4BE39D"/>
+            </linearGradient>
+          </defs>
+          <path class="steps__dots" d="M20 30 C 250 30, 300 10, 500 18 S 800 8, 980 10"/>
+          <path class="steps__line" id="stepsLine" d="M20 30 C 250 30, 300 10, 500 18 S 800 8, 980 10" pathLength="100"/>
+        </svg>
+        <article class="step reveal">
+          <span class="step__num num">1</span>
+          <h3>Поставь цель</h3>
+          <p>Название и число. Например, «Тысяча отжиманий» и 1000. Плюс три кнопки шага — то, чем считаешь на самом деле: +10, +30, +50.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__num num">2</span>
+          <h3>Тапай после подхода</h3>
+          <p>Одна запись — один день, тапы складываются. Ошибся — пять секунд на «Отменить». Перепутал день — свайп и исправь.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__num num">3</span>
+          <h3>Дойди до финиша</h3>
+          <p>Тропа на счётчике ведёт от старта к цели. На финише — праздник, карточка для друзей и цель в архиве.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="features">
+    <div class="container">
+      <h2 class="section__title reveal">Возможности</h2>
+      <div class="features">
+        <article class="feature reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Одна цель за раз</h3>
+          <p>Приложение открывается сразу на счётчике. Никаких списков и вкладок между запуском и кнопкой.</p>
+        </article>
+        <article class="feature reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="13" width="5" height="7" rx="2"/><rect x="9.5" y="13" width="5" height="7" rx="2"/><rect x="16" y="13" width="5" height="7" rx="2"/><path d="M12 4v5M9.5 6.5h5"/></svg>
+          <h3>Под большой палец</h3>
+          <p>Кнопки шага крупные и всегда внизу. Попадаешь не глядя, в перчатке, между подходами.</p>
+        </article>
+        <article class="feature reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg>
+          <h3>Отмена и правка дня</h3>
+          <p>Лишний тап снимается одним нажатием. Сверился с дневником — поставил дню правильное число.</p>
+        </article>
+        <article class="feature reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18c4 0 4-8 9-8s5-6 9-6"/><circle cx="12" cy="10" r="2"/></svg>
+          <h3>Тропа прогресса</h3>
+          <p>Пройденное залито градиентом, впереди — пунктир. Видно и сколько сделано, и сколько осталось.</p>
+        </article>
+        <article class="feature reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>
+          <h3>Праздник и карточка</h3>
+          <p>На финише — конфетти и итог: сколько и за сколько дней. Карточкой можно поделиться в любом мессенджере.</p>
+        </article>
+        <article class="feature reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <h3>Офлайн и без аккаунтов</h3>
+          <p>Данные только на телефоне. Нет рекламы, регистрации и аналитики. Копию можно сохранить в файл.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="container">
+      <h2 class="section__title reveal">Экраны</h2>
+      <div class="screens">
+        <figure class="screen reveal">
+          <img src="assets/img/screen-counter.webp" alt="Счётчик: 620 из 1000, тропа прогресса, кнопки +10, +30, +50" width="360" height="800" loading="lazy">
+          <figcaption>Счётчик</figcaption>
+        </figure>
+        <figure class="screen reveal">
+          <img src="assets/img/screen-win.webp" alt="Экран победы: цель достигнута, 1070, перевыполнено на 70" width="360" height="800" loading="lazy">
+          <figcaption>Финиш</figcaption>
+        </figure>
+        <figure class="screen reveal">
+          <img src="assets/img/screen-archive.webp" alt="Архив закрытых целей с результатами" width="360" height="800" loading="lazy">
+          <figcaption>Архив</figcaption>
+        </figure>
+        <figure class="screen reveal">
+          <img src="assets/img/screen-new.webp" alt="Форма новой цели: название, число, описание, кнопки шага" width="360" height="800" loading="lazy">
+          <figcaption>Новая цель</figcaption>
+        </figure>
+        <figure class="screen reveal">
+          <img src="assets/img/screen-home.webp" alt="Старт: пустая тропа и кнопка «Новая цель»" width="360" height="800" loading="lazy">
+          <figcaption>Старт</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="download">
+    <div class="container">
+      <div class="download reveal">
+        <img class="download__logo" src="assets/img/logo-256.webp" alt="Логотип Pathway" width="112" height="112">
+        <div class="download__body">
+          <h2 class="section__title">Скачать Pathway</h2>
+          <p class="download__meta num">Версия 1.0.0 · Android 7 и новее · 67 МБ</p>
+          <a class="btn btn--primary" href="downloads/pathway-1.0.0.apk" download>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"/></svg>
+            Скачать APK
+          </a>
+          <ol class="install">
+            <li>Скачай файл <span class="num">pathway-1.0.0.apk</span> на телефон.</li>
+            <li>Открой его. Android спросит разрешение устанавливать приложения из этого источника — разреши.</li>
+            <li>Нажми «Установить». Готово: Pathway появится среди приложений.</li>
+          </ol>
+          <p class="download__note">Версии для iPhone пока нет. Проверить файл можно по SHA-256:
+            <code class="num">4f7358bc726b37216190588653db4b23168741d8c9457fbde096204106314fc2</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <img src="assets/img/logo-96.png" alt="" width="28" height="28">
+    <span>© 2026 Pathway</span>
+    <a href="privacy.html">Политика конфиденциальности</a>
+    <a href="mailto:pretwora@gmail.com">pretwora@gmail.com</a>
+  </div>
+</footer>
+
+<script src="assets/js/logo-data.js?v=1" defer></script>
+<script src="assets/js/main.js?v=1" defer></script>
+</body>
+</html>
